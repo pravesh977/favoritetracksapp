@@ -1,0 +1,15 @@
+<% include ../partials/boilerplate %>
+<div class = 'listmaindiv'>
+  
+<% fullListData.forEach(function(elem) { %>
+<div class = 'eachblock'>
+<h1 class = 'blockoflist' id = 'tracklist'><%= elem.track %></h1>
+<h2 class = 'blockoflist' id = 'artistlist'><%= elem.artist %></h2>
+<h3 class = 'blockoflist' id = 'albumlist'><%= elem.album %></h3>
+<h3 class = 'blockoflist' id = 'genrelist'><%= elem.genre_id %></h3>
+</div>
+<% }); %>
+
+</div>
+
+<% include ../partials/end %>

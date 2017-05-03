@@ -1,0 +1,76 @@
+body {
+  box-sizing: border-box;
+}
+.mainbody {
+  background-image: url('../images/tape-297596_1280.png');
+  background-size: fixed;
+  height:90vh;
+  width:100%;
+  position:relative;
+}
+
+.mainbody h1 {
+  font-size:50px;
+  color:green;
+  text-align: center;
+  position: absolute;
+  margin: 150px 0px 100px 200px;
+  display:block;
+
+}
+
+.mainbody a {
+  text-align: center;
+  display:block;
+  text-decoration: none;
+  font-size: 40px;
+  color: red;
+  position: absolute;
+  margin:0 auto;
+  margin: 350px 0px 100px 200px;
+}
+
+.listmaindiv {
+  background-image: url('../images/boombox-2138198_1280.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width:100%;
+  height:100%;
+  /*why didint it work with height 100vh?*/
+  /*justify-content: flex-start;*/
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+
+#tracklist {
+  font-size: 40px;
+  color:red;
+}
+
+#artistlist {
+  font-size: 40px;
+  color:green;
+}
+
+#albumlist {
+  font-size: 40px;
+  color:blue;
+}
+
+#genrelist {
+  font-size: 30px;
+  color:black;
+}
+
+.eachblock {
+  width:45%;
+  background-color:rgba(255,0,255,0.3);
+  padding: 5px;
+  border: solid black 5px;
+  text-align:center;
+  margin: 10px auto 10px;
+ }
