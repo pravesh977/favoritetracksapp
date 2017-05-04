@@ -17,15 +17,15 @@ tracklistRoutes.get('/', controller.index);
 //other controller.index and singleShow need to go because they are in the database
 //and we need to get their data in jason form which is not required here.
 
-//it didnt work when i put this under /:id but why? order mattered?
+//it didnt work when i put /add under /:id but why? order mattered?
 tracklistRoutes.get('/add', (req, res) => {
   res.render('favSongsViews/favsong-add', {
     documentTitle: 'Add your Favorite Track',
   })
 });
 tracklistRoutes.get('/:id', controller.singleShow);
-
 tracklistRoutes.post('/', controller.addNew);
+
 
 tracklistRoutes.delete('/:id', controller.deleteit);
 
