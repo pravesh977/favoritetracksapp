@@ -19,6 +19,46 @@ controller.index = (req, res) => {
 };
 
 
+ //calling the findOne function for url/add
+controller.singleShow = function(req, res) {
+ Fav.findById(req.params.id)
+  .then(resSingle => {
+    res.render('favSongsViews/favsongsinglefile', {
+      documentTitle: 'Single View Title',
+      singleData: resSingle,
+    })
+  })
+  .catch(err => {
+  res.status(400).json(err);
+})
+};
+
+//dont understand this at all
+controller.addNew = (req, res) => {
+  Fav.addNew({
+    track: req.body.track,
+    artist: req.body.artist,
+    album: req.body.album,
+    genre_id: req.body.genre_id,
+  })
+  .then(star => {
+    res.redirect('/tracklist');
+  })
+ .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
+controller.deleteit = (req, res) => {
+  Fav.deleteit(req.params.id)
+    .then(() => {
+      res.redirect('/tracklist');
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
 module.exports = controller;
 
 

@@ -5,7 +5,7 @@ body {
   background-image: url('../images/tape-297596_1280.png');
   background-size: fixed;
   height:90vh;
-  width:100%;
+  width:100vw;
   position:relative;
 }
 
@@ -74,3 +74,23 @@ body {
   text-align:center;
   margin: 10px auto 10px;
  }
+
+ .singlepagemain {
+  background-image: url('../images/boombox-2138198_1280.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height:100vh;
+  text-align:center;
+ }
+
+ .blocksingle {
+   background-color:rgba(175,32,125,0.3);
+   width:50%;
+   border: solid black 5px;
+   font-size: 40px;
+   margin:300px;
+   position:absolute;
+ }
+
+

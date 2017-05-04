@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+<div class = 'addsongs'>
+  <!--does action say where to perform the post action? like, does it state where it would add the new post?
+  if i changed the action to just / then would it post it to the root directory?-->
+  <form method = 'POST' action = '/tracklist'>
+    <input name = 'track' type = 'text' placeholder = 'Track Name'>
+    <input name = 'artist' type = 'text' placeholder = 'Artist Name'>
+    <input name = 'album' type = 'text' placeholder = 'Album Name'>
+    <input name = 'genre_id' type = 'text' placeholder = 'Genre'>
+    <input type = 'submit' value = 'Add to List'>
+  </form>
+</div>
+
+<% include ../partials/end %>

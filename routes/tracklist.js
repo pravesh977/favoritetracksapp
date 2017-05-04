@@ -12,6 +12,22 @@ const tracklistRoutes = express.Router();
 tracklistRoutes.get('/', controller.index);
 
 
+//i think this /add doesnt need to be sent to the controller because
+//we are just creating a form using ... ejs file and in the controller,
+//other controller.index and singleShow need to go because they are in the database
+//and we need to get their data in jason form which is not required here.
+
+//it didnt work when i put this under /:id but why? order mattered?
+tracklistRoutes.get('/add', (req, res) => {
+  res.render('favSongsViews/favsong-add', {
+    documentTitle: 'Add your Favorite Track',
+  })
+});
+tracklistRoutes.get('/:id', controller.singleShow);
+
+tracklistRoutes.post('/', controller.addNew);
+
+tracklistRoutes.delete('/:id', controller.deleteit);
 
 
 //exporting so that appController.js and app.js can use it
