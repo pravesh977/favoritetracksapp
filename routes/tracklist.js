@@ -23,10 +23,15 @@ tracklistRoutes.get('/add', (req, res) => {
     documentTitle: 'Add your Favorite Track',
   })
 });
+
+//can this be rendered here just like /add instead of sending this to controller?
+tracklistRoutes.get('/updatelist/:id', controller.editthis);
+
 tracklistRoutes.get('/:id', controller.singleShow);
 tracklistRoutes.post('/', controller.addNew);
 
 
+tracklistRoutes.put('/:id', controller.updater);
 tracklistRoutes.delete('/:id', controller.deleteit);
 
 

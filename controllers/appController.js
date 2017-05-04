@@ -49,6 +49,37 @@ controller.addNew = (req, res) => {
     });
 };
 
+controller.editthis = (req, res) => {
+  Fav.findById(req.params.id)
+    .then(list => {
+      console.log(list);
+      
+      res.render('favSongsViews/favsongs-edit', {
+        documentTitle: 'Edit Info',
+        list: list,
+        id: req.params.id,
+  });
+    })
+  .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
+controller.updater = (req, res) => {
+  Fav.updater({
+    track: req.body.track,
+    artist: req.body.artist,
+    album: req.body.album,
+    genre_id: req.body.genre_id,
+  }, req.params.id)
+    .then(editresp => {
+      res.redirect('/tracklist');
+    })
+  .catch(err => {
+      res.status(400).json(err);
+    });
+};
+
 controller.deleteit = (req, res) => {
   Fav.deleteit(req.params.id)
     .then(() => {

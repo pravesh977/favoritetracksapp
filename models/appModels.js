@@ -27,6 +27,18 @@ Fav.addNew = asdf => {
   );
 };
 
+Fav.updater = (list, id) => {
+  return db.none(
+    `
+    UPDATE favtracks SET
+    track = $1,
+    artist = $2,
+    album = $3,
+    genre_id = $4
+    `,
+    [list.track, list.artist, list.album, list.genre_id, id]
+  );
+};
 
 Fav.deleteit = id => {
   return db.none(
