@@ -93,4 +93,47 @@ body {
    position:absolute;
  }
 
+nav {
+  background:yellow;
+}
+nav ul li {
+  font-size: 30px;
+ 
+  
+}
+nav ul {
+  display:flex;
+  justify-content: space-around;
+}
 
+nav ul li a {
+  text-decoration:none;
+  color: cyan;
+}
+
+.addsongs form{
+  display:flex;
+  flex-direction:column;
+  margin-top: 10%;
+  
+}
+
+.addsongs form input {
+  height: 70px;
+  font-size: 30px;
+  width: 30%;
+  align-content: center;
+  margin:0 auto;
+  text-align:center;
+}
+#formsubmit {
+  height: 70px;
+  font-size: 40px;
+  background: pink;
+  color:red;
+}
+
+.addsongs {
+  background-color:rgba(44,44,44,0.3);
+  height: 100vh;
+}
