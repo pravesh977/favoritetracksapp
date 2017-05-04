@@ -1,13 +1,11 @@
 <% include ../partials/boilerplate %>
-<div class = 'editdiv'>
   <form method = 'POST' action='/tracklist/<%= id %>?_method=PUT'>
-    <input name = 'track' type = 'text' value = '<%= list.track %>'>
-    <input name = 'artist' type = 'text' value = '<%= list.artist %>'>
-    <input name = 'album' type = 'text' value = '<%= list.album %>'>
-    <input name = 'genre_id' type = 'text' value = '<%= list.genre_id %>'>
+    <input name = 'track' type = 'text' value = '<%= listD.track %>'>
+    <input name = 'artist' type = 'text' value = '<%= listD.artist %>'>
+    <input name = 'album' type = 'text' value = '<%= listD.album %>'>
+    <input name = 'genre_id' type = 'text' value = '<%= listD.genre_id %>'>
     <input type = 'submit' value = 'Edit Info'>
   </form>
 
-</div>
 
 <% include ../partials/end %>

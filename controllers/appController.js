@@ -52,11 +52,9 @@ controller.addNew = (req, res) => {
 controller.editthis = (req, res) => {
   Fav.findById(req.params.id)
     .then(list => {
-      console.log(list);
-      
       res.render('favSongsViews/favsongs-edit', {
         documentTitle: 'Edit Info',
-        list: list,
+        listD: list,
         id: req.params.id,
   });
     })
@@ -72,7 +70,7 @@ controller.updater = (req, res) => {
     album: req.body.album,
     genre_id: req.body.genre_id,
   }, req.params.id)
-    .then(editresp => {
+    .then(list => {
       res.redirect('/tracklist');
     })
   .catch(err => {

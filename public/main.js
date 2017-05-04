@@ -1,8 +1,7 @@
-//cant i do a require here and get the value of fullListData.artist to assign to 
+//cant i do a require here and get the value of singleData.artist to assign to 
 // artist in this page?
-const artistName = require('./controllers/appController');
-console.log(fullListData);
-
+// const artistName = require('../controllers/appController');
+// console.log(singleData.artist);
 console.log('hello connected');
 console.log('hey yo');
 //http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=beck&api_key=31a7398b13d0f907ae5becde44d6ea8f&format=json;
@@ -10,6 +9,7 @@ let singlepagemain = document.querySelector('.singlepagemain');
 const baseurl = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=';
 const artist = 'beck';
 const API_KEY = '31a7398b13d0f907ae5becde44d6ea8f';
+const moredatabutton = document.getElementById('moredatabutton')
 // function fetchingapi () {
 fetch(baseurl + artist + '&api_key=' + API_KEY + '&format=json')
   .then(function(response) {

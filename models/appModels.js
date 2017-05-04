@@ -35,6 +35,7 @@ Fav.updater = (list, id) => {
     artist = $2,
     album = $3,
     genre_id = $4
+    WHERE id = $5
     `,
     [list.track, list.artist, list.album, list.genre_id, id]
   );
