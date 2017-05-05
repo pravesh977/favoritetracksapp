@@ -10,6 +10,11 @@ const Fav = {};
 //change this into arrow function
 Fav.findAll = () => {
   return db.query('SELECT * FROM favtracks ORDER BY id ASC');
+  //SELECT * FROM favtracks LEFT JOIN genre ON favtracks.id=genre.favtracks.id;
+  //SELECT * FROM customers LEFT JOIN sales ON customers.id=sales.customer_id;
+  //(‘SELECT * FROM item_type LEFT JOIN category ON item_type.category_id = category.id’);
+  // return db.query('SELECT * FROM favtracks LEFT JOIN genre ON genre.genre_id = favoritetracks.genre.id');
+  //return db.query('SELECT * FROM favtracks ORDER BY id ASC'); this is working
 };
 
 Fav.findById = id => {

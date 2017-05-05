@@ -1,13 +1,59 @@
 <% include ../partials/boilerplate %>
 <div class = 'singlepagemain'>
   <div class = 'blocksingle'>
-<h1 class = 'singleartist'><%= singleData.artist %></h1>
-<h2 class = 'singletrack'><%= singleData.track %></h2>
-<h3 class = 'singlealbum'><%= singleData.album %></h2>
-<h3 class = 'singlegenre'><%= singleData.genre_id %></h3>
-  <button id = 'moredatabutton'>Get more info</button>
+    <h1 class= 'singleartist'><%= singleData.artist %></h1>
+    <h2 class = 'singletrack'><%= singleData.track %></h2>
+    <h3 class = 'singlealbum'><%= singleData.album %></h2>
+    <h3 class = 'singlegenre'><%= singleData.genre_id %></h3>
+    <button id = 'moredatabutton'>Get more info</button>
   </div>
+  <div class='fetchedstuffgoeshere'></div>
 </div>
+<script>
 
 
-<% include ../partials/end %>
+
+var myArt = document.querySelector('.singleartist');
+console.log(myArt);
+var artistAPI = myArt.innerText;
+console.log(artistAPI);
+// var mySliced = myArt.split(" "); ... its not a string :(
+
+// console.log(mySliced);
+
+  //http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=beck&api_key=31a7398b13d0f907ae5becde44d6ea8f&format=json;
+let singlepagemain = document.querySelector('.singlepagemain');
+const baseurl = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=';
+const artist = artistAPI;
+const API_KEY = '31a7398b13d0f907ae5becde44d6ea8f';
+const moredatabutton = document.getElementById('moredatabutton')
+
+fetch(baseurl + artist + '&api_key=' + API_KEY + '&format=json')
+  .then(function(response) {
+    response.json()
+      .then(function(lastFmData){
+        console.log(lastFmData);
+        // debugger;
+        console.log(lastFmData.toptracks.track[1].image[3]);
+         console.log(lastFmData.toptracks.track[1].image[3]['#text']);
+         moredatabutton.addEventListener('click', function() {
+         let artistimg = document.createElement('img');
+         singlepagemain.appendChild(artistimg);
+         artistimg.src = lastFmData.toptracks.track[6].image[3]['#text'];
+         let unorderlist = document.createElement('unorder');
+         unorderlist.setAttribute('class', 'unorderlist');
+         let fetchedstuff = document.querySelector('.fetchedstuffgoeshere')
+         fetchedstuff.appendChild(unorderlist);   
+         let toparray = lastFmData.toptracks.track;
+            toparray.forEach(function(elem){
+              console.log(elem.name);
+              let toplist = document.createElement('li');
+         toplist.setAttribute('class', 'toplist');
+         unorderlist.appendChild(toplist);
+              toplist.innerHTML = elem.name;
+            });
+});
+})
+});
+
+</script>

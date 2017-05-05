@@ -4,6 +4,8 @@ const express = require('express');
 //importing appController file from controllers folder and assigning it to variable controller
 const controller = require('../controllers/appController');
 
+const sayHello = require('./services/routehelpers/musichelpers');
+
 //this tracklistRoutes variable will be exported to app.js
 const tracklistRoutes = express.Router();
 
