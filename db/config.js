@@ -9,12 +9,8 @@ if (process.env.NODE.ENV === 'development' || !process.env.NODE_ENV) {
     host: 'localhost'
   });
 } else if (process.env.NODE_ENV === 'production') {
-  db = pgp({
-    database: 'favoritetracks_db_production',
-    port: 5432,
-    host: 'localhost'
-  });
-};
+  db = pgp(process.env.DATABASE_URL);
+}
 
 
 //this db will be used at module folder's appModule file
