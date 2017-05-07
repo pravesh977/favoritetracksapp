@@ -23,7 +23,8 @@ console.log(artistAPI);
 
   //http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=beck&api_key=31a7398b13d0f907ae5becde44d6ea8f&format=json;
 let singlepagemain = document.querySelector('.singlepagemain');
-const baseurl = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=';
+//const baseurl = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist='; working changed for heroku
+const baseurl = '//ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=';
 const artist = artistAPI;
 const API_KEY = '31a7398b13d0f907ae5becde44d6ea8f';
 const moredatabutton = document.getElementById('moredatabutton')

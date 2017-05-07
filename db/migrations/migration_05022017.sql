@@ -1,4 +1,4 @@
-\connect favoritetracks_db
+
 
 CREATE TABLE IF NOT EXISTS genre (
   id BIGSERIAL PRIMARY KEY,

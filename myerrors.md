@@ -41,3 +41,9 @@ Cannot read property 'track' of null
     at ServerResponse.render (/Users/student/Desktop/favoritemusicapp/node_modules/express/lib/response.js:966:7)
     at Fav.findById.then.editresp (/Users/student/Desktop/favoritemusicapp/controllers/appController.js:55:11)
     at process._tickCallback (internal/process/next_tick.js:109:7)
+
+
+
+Mixed Content: The page at 'https://arcane-falls-24739.herokuapp.com/tracklist/12' was loaded over HTTPS, but requested an insecure resource 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=radiohead&api_key=31a7398b13d0f907ae5becde44d6ea8f&format=json'.
+This request has been blocked; the content must be served over HTTPS.
+Uncaught (in promise) TypeError: Failed to fetch
