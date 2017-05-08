@@ -33,7 +33,7 @@ app.use(methodOverride('_method'));
 // starting the main root, telling it to render using views at folder views and using file index.ejs
 app.get('/', function (req, res) {
   res.render('index', {
-    mainheader: 'Welcome to favorite music list app thingy',
+    mainheader: 'Welcome to favorite music list app',
     documentTitle: 'My favorite music list storage app'
   });
 });
