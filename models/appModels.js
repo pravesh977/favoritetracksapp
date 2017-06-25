@@ -9,7 +9,8 @@ const Fav = {};
 //gettting all songs from database and saving it as property findAll in Fav object?
 //change this into arrow function
 Fav.findAll = () => {
-  return db.query('SELECT * FROM favtracks ORDER BY id ASC');
+  //return db.query('SELECT * FROM favtracks ORDER BY id ASC');
+  return db.query('SELECT favtracks.id, favtracks.track, favtracks.artist, favtracks.album, genre.genre_type FROM favtracks JOIN genre ON favtracks.genre_id=genre.id ORDER BY id ASC');
   //SELECT * FROM favtracks LEFT JOIN genre ON favtracks.id=genre.favtracks.id;
   //SELECT * FROM customers LEFT JOIN sales ON customers.id=sales.customer_id;
   //(‘SELECT * FROM item_type LEFT JOIN category ON item_type.category_id = category.id’);
@@ -19,6 +20,7 @@ Fav.findAll = () => {
 
 Fav.findById = id => {
   return db.oneOrNone('SELECT * FROM favtracks WHERE id = $1', [id]);
+  // return db.oneOrNone('SELECT favtracks.id, favtracks.track, favtracks.artist, favtracks.album, genre.genre_type FROM favtracks JOIN genre ON favtracks.genre_id=genre.id WHERE id = $1', [id]);
 };
 
 Fav.addNew = asdf => {

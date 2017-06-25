@@ -2,7 +2,6 @@ const Fav = require('../models/appModels')
 
 const controller = {};
 
-
 controller.index = (req, res) => {
   //calling the findAll function (which gets data from the database in appModels) and getting the json object.. just like fetch
   Fav.findAll()
@@ -89,6 +88,3 @@ controller.deleteit = (req, res) => {
 };
 
 module.exports = controller;
-
-
-
